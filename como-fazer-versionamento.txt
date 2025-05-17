@@ -1,0 +1,91 @@
+Notas Sobre o Que aprendi
+
+Git & GitHub – Tutorial Básico
+
+Bash
+-----
+Terminal de comandos para o Git (interface de linha de comando)
+
+Configuração Inicial do Git
+---------------------------
+git config --global user.email "seu-email@example.com"    # define o email da conta GitHub  
+git config --global user.name "Seu Nome"                   # define o nome que aparece nos commits  
+
+Criando um Repositório Local
+----------------------------
+1. Crie uma pasta para o projeto  
+2. Clique com o botão direito e selecione "Git Bash Here"  
+3. Inicie o repositório:  
+   git init  
+4. Verifique o status dos arquivos:  
+   git status  
+5. Adicione arquivos ao controle de versão:  
+   git add nome-do-arquivo      # adiciona arquivo específico  
+   git add .                    # adiciona todos os modificados  
+6. Crie um commit (versão):  
+   git commit -m "mensagem do commit"  
+
+Conectando ao Repositório Remoto (GitHub)
+-----------------------------------------
+1. Adicione o repositório remoto:  
+   git remote add origin https://github.com/usuario/repositorio.git  
+2. Defina a branch principal:  
+   git push --set-upstream origin main  
+3. Envie alterações:  
+   git push  
+
+Ciclo de Controle de Versão
+---------------------------
+1. Modifique o projeto  
+2. git add .  
+3. git commit -m "mensagem"  
+4. git push  
+
+Histórico de Versão
+-------------------
+git reflog        # exibe o histórico completo de commits (incluindo resets)
+
+Navegar Entre Versões
+---------------------
+git reset --hard <código_do_reflog>    # volta (ou avança) para versão desejada
+
+Branch
+------
+- Branch = linha paralela do projeto  
+- master (ou main) é a branch principal  
+- staging geralmente é usada para testes  
+
+Comandos úteis:  
+git branch                   # ver branches existentes  
+git branch nome-da-branch   # criar nova branch  
+git checkout nome-da-branch # trocar de branch  
+
+Criar e mudar para nova branch direto:  
+git checkout -b nova-branch branch-base  
+
+Merge de Branch
+---------------
+1. git pull                          # atualize com servidor remoto  
+2. Crie/edite sua branch  
+3. git pull                          # garanta que está atualizado  
+4. Vá para a branch principal:  
+   git checkout main  
+5. Faça o merge:  
+   git merge nome-da-sua-branch  
+
+Pull Request (PR) – Merge Democrático
+-------------------------------------
+1. Baixe o projeto  
+2. Crie uma branch  
+3. Faça modificações e git push  
+4. No GitHub, crie um Pull Request  
+5. Aguardando aprovação dos colaboradores  
+
+.gitignore
+----------
+Evita que certos arquivos/pastas sejam versionados.
+
+1. Crie o arquivo:  
+   touch .gitignore  
+2. Escreva os caminhos dos arquivos/pastas a serem ignorados  
+3. Salve o arquivo dentro do projeto  
